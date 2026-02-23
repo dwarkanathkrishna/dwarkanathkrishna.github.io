@@ -1,70 +1,131 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Dwarkanath Krishna | Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #0f172a;
-            color: white;
-            text-align: center;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dwarkanath Krishna | Portfolio</title>
 
-        header {
-            padding: 60px 20px;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-        h1 {
-            font-size: 3em;
-            margin: 0;
-        }
+<style>
+:root {
+    --bg: #0f172a;
+    --text: white;
+    --card: #1e293b;
+    --accent: #38bdf8;
+}
 
-        p {
-            color: #94a3b8;
-            font-size: 1.2em;
-        }
+.light {
+    --bg: #f1f5f9;
+    --text: #0f172a;
+    --card: white;
+    --accent: #0ea5e9;
+}
 
-        section {
-            padding: 40px 20px;
-        }
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: 0.4s;
+}
 
-        .card {
-            background: #1e293b;
-            margin: 20px auto;
-            padding: 20px;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 500px;
-        }
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+}
 
-        a {
-            color: #38bdf8;
-            text-decoration: none;
-        }
+nav h2 {
+    margin: 0;
+}
 
-        footer {
-            margin-top: 40px;
-            padding: 20px;
-            background: #1e293b;
-        }
-    </style>
+button {
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background: var(--accent);
+    color: white;
+}
+
+header {
+    text-align: center;
+    padding: 100px 20px;
+    animation: fadeIn 2s ease-in;
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.card {
+    background: var(--card);
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    background: var(--card);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+</style>
 </head>
+
 <body>
 
+<nav>
+    <h2>Dwarkanath Krishna</h2>
+    <button onclick="toggleTheme()">Toggle Mode</button>
+</nav>
+
 <header>
-    <h1>Dwarkanath Krishna</h1>
-    <p>CSE Student | AI Developer | Full Stack Learner</p>
+    <h1>AI Developer & CSE Student</h1>
+    <p>Building Intelligent Systems & Modern Web Applications</p>
+    <br>
+    <a href="resume.pdf" download>
+        <button>Download Resume</button>
+    </a>
 </header>
 
 <section>
     <h2>About Me</h2>
     <div class="card">
-        <p>
-            I am a Computer Science Engineering student passionate about 
-            Artificial Intelligence, Web Development and building innovative projects.
-        </p>
+        Passionate Computer Science student working on AI systems,
+        Driver Vigilance projects, and Full Stack Development.
     </div>
 </section>
 
@@ -72,28 +133,41 @@
     <h2>Projects</h2>
 
     <div class="card">
+        <img src="https://source.unsplash.com/500x300/?ai" alt="AI Project">
         <h3>Driver Vigilance System</h3>
-        <p>AI-based system for detecting drowsiness, emotions and safety alerts.</p>
+        <p>Emotion detection, drowsiness detection & safety alerts using AI.</p>
     </div>
 
     <div class="card">
+        <img src="https://source.unsplash.com/500x300/?robot" alt="Robotics">
         <h3>Self Driving Obstacle Avoidance Car</h3>
-        <p>GPS + MPU9250 based smart navigation system.</p>
+        <p>GPS + MPU9250 smart navigation system.</p>
     </div>
+
 </section>
 
 <section>
     <h2>Contact</h2>
     <div class="card">
         <p>Email: yourmail@gmail.com</p>
-        <p>LinkedIn: <a href="#">Add Your Link</a></p>
-        <p>GitHub: <a href="#">Add Your Link</a></p>
+        <p>
+            <a href="https://github.com/dwarkanathkrishna" target="_blank">GitHub</a>
+        </p>
+        <p>
+            <a href="#" target="_blank">LinkedIn</a>
+        </p>
     </div>
 </section>
 
 <footer>
     © 2026 Dwarkanath Krishna
 </footer>
+
+<script>
+function toggleTheme() {
+    document.body.classList.toggle("light");
+}
+</script>
 
 </body>
 </html>
